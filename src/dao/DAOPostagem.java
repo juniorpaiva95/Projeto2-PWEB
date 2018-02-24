@@ -36,4 +36,6 @@ public class DAOPostagem extends DAO<Postagem>{
 			return null;
 		}
 	}
+	
+	
 }

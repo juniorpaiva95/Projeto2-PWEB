@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import org.eclipse.persistence.jpa.jpql.parser.DateTime;
+
 @MappedSuperclass
 public class Model {
 	@Temporal(TemporalType.TIMESTAMP)

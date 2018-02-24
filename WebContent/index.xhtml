@@ -32,7 +32,7 @@
 		class="table table-striped table-hover"
 		> 
 			<h:column>
-				<f:facet name="header">Matricula</f:facet>
+				<f:facet name="header">Código</f:facet>
 				#{postagem.id}
 			</h:column>
 			<h:column>
@@ -51,7 +51,22 @@
 				<f:facet name="header">Usuário</f:facet>
 				#{postagem.usuario.login}
 			</h:column>
-			
+			<h:column>
+				<f:facet name="header">Qtde Comentarios</f:facet>
+				#{postagem.comentarios.size()}
+			</h:column>
+					
+			<h:column>
+				<f:facet name="header">Comentários</f:facet>
+				<ul>
+					<ui:repeat var="comentario" value="#{postagem.getComentarios()}">
+					<li>#{comentario.getUsuario().getLogin()} :  #{comentario.getComentario()}</li>
+					
+				</ui:repeat>
+				</ul>
+				
+			</h:column>
+			<!-- <ui:repeat var="" value=""></ui:repeat> -->
 			<h:column>
 				<f:facet name="header">Data postagem</f:facet>
 				#{postagem.created_at}

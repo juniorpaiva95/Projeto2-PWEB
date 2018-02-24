@@ -17,12 +17,13 @@ public class PostagemManagedBean {
 	
 		
 	public void init() {
-		for (Postagem postagem : daoPostagem.listar()) {
-			postagens.add(postagem);
-		}
+		postagens = daoPostagem.listar();
 	}
 
 	public List<Postagem> getPostagens(){
+		for (Postagem postagem : postagens) {
+			System.out.println(postagem.toString());
+		}
         return postagens;
     }
 	
